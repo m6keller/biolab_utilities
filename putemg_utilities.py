@@ -538,6 +538,12 @@ def prepare_pipeline(train_in: pd.DataFrame, train_out: pd.DataFrame,
     if predictor == "LDA":
         from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
         predictor_instance = LinearDiscriminantAnalysis(**predictor_args)
+    elif predictor == "LOR":
+        from sklearn.linear_model import LogisticRegression
+        predictor_instance = LogisticRegression(**predictor_args)
+    elif predictor == "RF":
+        from sklearn.ensemble import RandomForestClassifier
+        predictor_instance = RandomForestClassifier(**predictor_args)
     elif predictor == "QDA":
         from sklearn.discriminant_analysis import QuadraticDiscriminantAnalysis
         predictor_instance = QuadraticDiscriminantAnalysis(**predictor_args)
